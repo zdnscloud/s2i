@@ -68,12 +68,11 @@ RUN sed -i "s/#LoadModule\ rewrite_module/LoadModule\ rewrite_module/" /etc/apac
     && sed -i "s#/var/www/localhost/htdocs#/opt/app-root#" /etc/apache2/httpd.conf \
     && printf "\n<Directory \"/opt/app-root\">\n\tAllowOverride All\n</Directory>\n" >> /etc/apache2/httpd.conf
 
-RUN mkdir -p /opt/app-root && chown -R apache:apache /opt/app-root && chmod -R 755 /opt/app-root
+RUN mkdir -p /opt/app-root
+WORKDIR /opt/app-root
 
 # TODO (optional): Copy the builder files into /opt/app-root
 # COPY ./<builder_folder>/ /opt/app-root/
-
-WORKDIR /opt/app-root
 
 # Copy the S2I scripts to /usr/libexec/s2i
 COPY ./s2i/bin/ /usr/libexec/s2i
@@ -81,9 +80,10 @@ LABEL io.openshift.s2i.scripts-url="image:///usr/libexec/s2i"
 
 # Drop the root user and make the content of /opt/app-root owned by user 1001
 #RUN chown -R 1001:1001 /opt/app-root
+RUN chown -R apache:apache /opt/app-root && chmod -R 755 /opt/app-root
 
 # This default user 
-#USER 1000
+USER root
 
 # TODO: Set the default port for applications built using this image
 EXPOSE 80

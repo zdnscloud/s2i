@@ -11,9 +11,6 @@ cp -Rf /tmp/src/. ./
 echo "---> Installing application source..."
 mv /tmp/src/* ./
 
-echo "---> Installing application source..."
-mv /tmp/src/* ./
-
 if [ -f composer.json ]; then
   echo "Found 'composer.json', installing dependencies using composer.phar... "
 
