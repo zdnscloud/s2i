@@ -8,4 +8,6 @@
 #	https://github.com/openshift/source-to-image/blob/master/docs/builder_image.md
 #
 # tar cf - <list of files and folders>
-tar cf - node_modules
+if [ -d node_modules ]; then
+    tar cf - node_modules
+fi

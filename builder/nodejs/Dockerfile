@@ -13,7 +13,8 @@ LABEL io.k8s.description="Platform for building nodejs" \
       io.tags="builder,zcloud,nodejs"
 
 # Install required packages here:
-RUN apk add --no-cache bash && npm install -g npm
+RUN npm install -g npm
+RUN apk add --no-cache bash ca-certificates
 
 RUN mkdir -p /opt/app-root
 WORKDIR /opt/app-root
