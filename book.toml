@@ -1,0 +1,9 @@
+[book]
+authors = ["gsmlg"]
+language = "zh"
+multilingual = false
+src = "docs"
+title = "Zcloud Source to Image"
+
+[output.html]
+theme = "theme"
