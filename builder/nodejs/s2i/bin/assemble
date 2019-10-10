@@ -9,7 +9,7 @@ fi
 #
 if [ "$(ls /tmp/artifacts/ 2>/dev/null)" ]; then
   echo "---> Restoring build artifacts..."
-  mv /tmp/artifacts/. ./
+  cp -Rf /tmp/artifacts/. ./
 fi
 
 echo "---> Installing application source..."
