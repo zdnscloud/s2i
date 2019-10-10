@@ -3,29 +3,41 @@
 ## PHP 7
 
 目录 `builders/php7`
+基于 `alpine`
 
-构建`builder`镜像
+### 构建`builder`镜像
+
 ```
 make build
 ```
 
-测试`builder`镜像
+### 测试`builder`镜像
+
 ```
 make test
 ```
 
-发布`builder`镜像
+### 发布`builder`镜像
+
 ```
 make docker
 ```
 
-使用`builder`镜像
+### 使用`builder`镜像
 
 ```
 s2i build [source dir] zdnscloud/s2i-php-builder [app image name]
 ```
 
-支持的环境变量配置:
+#### 构建过程
+
+根据 `composer.json` 文件选择使用 `composer.phar` 安装相关依赖
+
+#### 运行
+
+运行`app image`时，会调用`apache`，并以`/opt/app-root`目录为`DocumentRoot`
+
+##### 支持的环境变量配置
 
 `httpd.conf`:
 
