@@ -1,5 +1,5 @@
 # zcloud-php-builder
-FROM php:alpine
+FROM alpine
 
 # Maintainer 
 LABEL maintainer="Gao <gaoshiming@zdns.cn>"
