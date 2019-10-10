@@ -75,10 +75,9 @@ RUN mkdir -p /opt/app-root && chown -R apache:apache /opt/app-root && chmod -R 7
 
 WORKDIR /opt/app-root
 
-# Sets io.s2i.scripts-url label that way, or update that label
-LABEL io.s2i.scripts-url="image:///usr/libexec/s2i"
 # Copy the S2I scripts to /usr/libexec/s2i
 COPY ./s2i/bin/ /usr/libexec/s2i
+LABEL io.openshift.s2i.scripts-url="image:///usr/libexec/s2i"
 
 # Drop the root user and make the content of /opt/app-root owned by user 1001
 #RUN chown -R 1001:1001 /opt/app-root

@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash -e
 
 # If the 'zcloud-php-builder' assemble script is executed with the '-h' flag, print the usage.
 if [[ "$1" == "-h" ]]; then
