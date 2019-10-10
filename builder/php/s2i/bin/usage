@@ -1,0 +1,12 @@
+#!/bin/bash -e
+cat <<EOF
+This is the zcloud-php-builder S2I image:
+To use it, install S2I: https://github.com/zdnscloud/s2i
+
+Sample invocation:
+
+s2i build <source code path/URL> zcloud-php-builder <application image>
+
+You can then run the resulting image via:
+docker run <application image>
+EOF
