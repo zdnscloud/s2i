@@ -1,4 +1,3 @@
-#!/bin/sh -e
-pushd ${HOME} >/dev/null
+#!/bin/bash -e
+cd ${HOME} >/dev/null
 tar cf - vendor
-popd >/dev/null
