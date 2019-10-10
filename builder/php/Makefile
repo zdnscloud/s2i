@@ -1,5 +1,5 @@
 IMAGE_NAME = zdnscloud/s2i-php-builder
-TAG = ${TAG:-latest}
+TAG ?= latest
 
 .PHONY: build
 build:
