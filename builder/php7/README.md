@@ -42,7 +42,7 @@ Make sure that all of the scripts are executable by running *chmod +x s2i/bin/**
 #### Create the builder image
 The following command will create a builder image named zcloud-php-builder based on the Dockerfile that was created previously.
 ```
-docker build -t zcloud-php-builder .
+make build
 ```
 The builder image can also be created by using the *make* command since a *Makefile* is included.
 
@@ -51,8 +51,7 @@ Once the image has finished building, the command *s2i usage zcloud-php-builder*
 #### Testing the builder image
 The builder image can be tested using the following commands:
 ```
-docker build -t zcloud-php-builder-candidate .
-IMAGE_NAME=zcloud-php-builder-candidate test/run
+make tst
 ```
 The builder image can also be tested by using the *make test* command since a *Makefile* is included.
 
@@ -68,7 +67,7 @@ Using the logic defined in the *assemble* script, s2i will now create an applica
 #### Running the application image
 Running the application image is as simple as invoking the docker run command:
 ```
-docker run -d -p 8080:8080 zcloud-php-builder-app
+docker run -d -p 8080:80 zcloud-php-builder-app
 ```
 The application, which consists of a simple static web page, should now be accessible at  [http://localhost:8080](http://localhost:8080).
 
