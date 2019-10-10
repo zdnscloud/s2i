@@ -1,4 +1,5 @@
 IMAGE_NAME = zdnscloud/s2i-nodejs-builder
+TAG ?= latest
 
 .PHONY: build
 build:
@@ -8,3 +9,6 @@ build:
 test:
 	docker build -t $(IMAGE_NAME)-candidate .
 	IMAGE_NAME=$(IMAGE_NAME)-candidate test/run
+
+docker:
+	docker push $(IMAGE_NAME):$(TAG)
