@@ -1,4 +1,4 @@
-#!/bin/bash -e
+#!/bin/sh
 cat <<EOF
 This is the zcloud-php-builder S2I image:
 To use it, install S2I: https://github.com/zdnscloud/s2i

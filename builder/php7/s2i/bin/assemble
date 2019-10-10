@@ -1,22 +1,8 @@
-#!/bin/bash -e
-#
-# S2I assemble script for the 'zcloud-php-builder' image.
-# The 'assemble' script builds your application source so that it is ready to run.
-#
-# For more information refer to the documentation:
-#	https://github.com/zdnscloud/s2i/blob/master/docs/builder_image.md
-#
+#!/bin/sh
 
 # If the 'zcloud-php-builder' assemble script is executed with the '-h' flag, print the usage.
 if [[ "$1" == "-h" ]]; then
-	exec /usr/libexec/s2i/usage
-fi
-
-# Restore artifacts from the previous build (if they exist).
-#
-if [ "$(ls /tmp/artifacts/ 2>/dev/null)" ]; then
-  echo "---> Restoring build artifacts..."
-  mv /tmp/artifacts/. ./
+    exec /usr/libexec/s2i/usage
 fi
 
 echo "---> Installing application source..."
@@ -24,6 +10,5 @@ cp -Rf /tmp/src/. ./
 
 echo "---> Building application from source..."
 # TODO: Add build steps for your application, eg npm install, bundle install, pip install, etc.
-mv "$PHP_INI_DIR/php.ini-production" "$PHP_INI_DIR/php.ini"
 
 
