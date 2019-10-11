@@ -1,0 +1,240 @@
+<!DOCTYPE HTML>
+<html lang="zh" class="sidebar-visible no-js">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>User Guide - Zcloud Source to Image</title>
+        
+
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff" />
+
+        <link rel="shortcut icon" href="../favicon.png">
+        <link rel="stylesheet" href="../css/variables.css">
+        <link rel="stylesheet" href="../css/general.css">
+        <link rel="stylesheet" href="../css/chrome.css">
+        <link rel="stylesheet" href="../css/print.css" media="print">
+
+        <!-- Fonts -->
+        <link rel="stylesheet" href="../FontAwesome/css/font-awesome.css">
+
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" href="../highlight.css">
+        <link rel="stylesheet" href="../tomorrow-night.css">
+        <link rel="stylesheet" href="../ayu-highlight.css">
+
+        <!-- Custom theme stylesheets -->
+        
+
+        
+    </head>
+    <body class="light">
+        <!-- Provide site root to javascript -->
+        <script type="text/javascript">
+            var path_to_root = "../";
+            var default_theme = "light";
+        </script>
+
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script type="text/javascript">
+            try {
+                var theme = localStorage.getItem('mdbook-theme');
+                var sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script type="text/javascript">
+            var theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            document.body.className = theme;
+            document.querySelector('html').className = theme + ' js';
+        </script>
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script type="text/javascript">
+            var html = document.querySelector('html');
+            var sidebar = 'hidden';
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            }
+            html.classList.remove('sidebar-visible');
+            html.classList.add("sidebar-" + sidebar);
+        </script>
+
+        <nav id="sidebar" class="sidebar" aria-label="Table of contents">
+            <div class="sidebar-brand">
+              <image class="sidebar-icon" src="../images/icon.png" />
+              <b class="sidebar-book-title">Zcloud Source to Image</b>
+            </div>
+            <div class="sidebar-scrollbox">
+                <ol class="chapter"><li><a href="../s2i.html"><strong aria-hidden="true">1.</strong> S2I Intro</a></li><li><ol class="section"><li><a href="../s2i/builder_image.html"><strong aria-hidden="true">1.1.</strong> Builder Requirements</a></li><li><a href="../s2i/cli.html"><strong aria-hidden="true">1.2.</strong> CLI</a></li><li><a href="../s2i/debugging-s2i.html"><strong aria-hidden="true">1.3.</strong> Debugging</a></li><li><a href="../s2i/new_labels.html"><strong aria-hidden="true">1.4.</strong> New Lables</a></li><li><a href="../s2i/runtime_image.html"><strong aria-hidden="true">1.5.</strong> Runtime Image</a></li><li><a href="../s2i/user_guide.html" class="active"><strong aria-hidden="true">1.6.</strong> User Guide</a></li></ol></li><li><a href="../builders.html"><strong aria-hidden="true">2.</strong> Builders</a></li><li><ol class="section"><li><a href="../builders/php.html"><strong aria-hidden="true">2.1.</strong> php</a></li><li><a href="../builders/nodejs.html"><strong aria-hidden="true">2.2.</strong> nodejs</a></li><li><a href="../builders/java.html"><strong aria-hidden="true">2.3.</strong> java</a></li><li><a href="../'./builders/go.html"><strong aria-hidden="true">2.4.</strong> go</a></li></ol></li></ol>
+            </div>
+            <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
+        </nav>
+
+        <div id="page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                
+                <div id="menu-bar" class="menu-bar">
+                    <div id="menu-bar-sticky-container">
+                        <div class="left-buttons">
+                            <button id="sidebar-toggle" class="icon-button" type="button" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
+                                <i class="fa fa-bars"></i>
+                            </button>
+                            
+                            <button id="search-toggle" class="icon-button" type="button" title="Search. (Shortkey: s)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="S" aria-controls="searchbar">
+                                <i class="fa fa-search"></i>
+                            </button>
+                            
+                        </div>
+
+                        <h1 class="menu-title">Zcloud Source to Image</h1>
+                    </div>
+                </div>
+
+                
+                <div id="search-wrapper" class="hidden">
+                    <form id="searchbar-outer" class="searchbar-outer">
+                        <input type="search" name="search" id="searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="searchresults-outer" aria-describedby="searchresults-header">
+                    </form>
+                    <div id="searchresults-outer" class="searchresults-outer hidden">
+                        <div id="searchresults-header" class="searchresults-header"></div>
+                        <ul id="searchresults">
+                        </ul>
+                    </div>
+                </div>
+                
+
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script type="text/javascript">
+                    document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="content" class="content">
+                    <main>
+                        <h1><a class="header" href="#using-s2i-images" id="using-s2i-images">Using S2I images</a></h1>
+<p>S2I builder images normally include <a href="https://docs.okd.io/latest/creating_images/s2i.html#s2i-scripts"><code>assemble</code> and <code>run</code> scripts</a>, but the default behavior of those scripts may not be suitable for all users. This topic covers a few approaches for customizing the behavior of an S2I builder that includes default scripts.</p>
+<h2><a class="header" href="#invoking-scripts-embedded-in-an-image" id="invoking-scripts-embedded-in-an-image">Invoking scripts embedded in an image</a></h2>
+<p>Typically, builder images provide their own version of the <a href="builder_image.html#s2i-scripts">S2I scripts</a> that cover the most common use-cases. If these scripts do not fulfill your needs, S2I provides a way of overriding them by adding custom ones in the <code>.s2i/bin</code> directory. However, by doing this you are <a href="https://docs.okd.io/latest/creating_images/s2i.html#s2i-scripts">completely replacing the standard scripts</a>. In some cases this is acceptable, but in other scenarios you may prefer to execute a few commands before (or after) the scripts while retaining the logic of the script provided in the image. In this case, it is possible to create a wrapper script that executes custom logic and delegates further work to the default script in the image.</p>
+<p>To determine the location of the scripts inside of the builder image, look at the value of <code>io.openshift.s2i.scripts-url</code> label. Use <code>docker inspect</code>:</p>
+<pre><code class="language-console">$ docker inspect --format='{{ index .Config.Labels &quot;io.openshift.s2i.scripts-url&quot; }}' openshift/wildfly-100-centos7
+image:///usr/libexec/s2i
+</code></pre>
+<p>You inspected the <code>openshift/wildfly-100-centos7</code> builder image and found out that the scripts are in the <code>/usr/libexec/s2i</code> directory.</p>
+<p>With this knowledge, invoke any of these scripts from your own by wrapping its invocation.</p>
+<p>Example of <code>.s2i/bin/assemble</code> script:</p>
+<pre><code class="language-bash">#!/bin/bash
+echo &quot;Before assembling&quot;
+
+/usr/libexec/s2i/assemble
+rc=$?
+
+if [ $rc -eq 0 ]; then
+    echo &quot;After successful assembling&quot;
+else
+    echo &quot;After failed assembling&quot;
+fi
+
+exit $rc
+</code></pre>
+<p>The example shows a custom <code>assemble</code> script that prints the message, executes standard <code>assemble</code> script from the image and prints another message depending on the exit code of the <code>assemble</code> script.</p>
+<p>When wrapping the <code>run</code> script, you must <a href="https://docs.okd.io/latest/creating_images/guidelines.html#general-docker-guidelines">use <code>exec</code> for invoking it</a> to ensure signals are handled properly. Unfortunately, the use of <code>exec</code> also precludes the ability to run additional commands after invoking the default image run script.</p>
+<p>Example of <code>.s2i/bin/run</code> script:</p>
+<pre><code class="language-bash">#!/bin/bash
+echo &quot;Before running application&quot;
+exec /usr/libexec/s2i/run
+</code></pre>
+
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+                        
+                            <a rel="prev" href="../s2i/runtime_image.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                                <i class="fa fa-angle-left"></i>
+                            </a>
+                        
+
+                        
+                            <a rel="next" href="../builders.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                                <i class="fa fa-angle-right"></i>
+                            </a>
+                        
+
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+                
+                    <a href="../s2i/runtime_image.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                        <i class="fa fa-angle-left"></i>
+                    </a>
+                
+
+                
+                    <a href="../builders.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                        <i class="fa fa-angle-right"></i>
+                    </a>
+                
+            </nav>
+
+        </div>
+
+        
+        <!-- Livereload script (if served using the cli tool) -->
+        <script type="text/javascript">
+            var socket = new WebSocket("ws://localhost:8089");
+            socket.onmessage = function (event) {
+                if (event.data === "reload") {
+                    socket.close();
+                    location.reload(true); // force reload from server (not from cache)
+                }
+            };
+
+            window.onbeforeunload = function() {
+                socket.close();
+            }
+        </script>
+        
+
+        
+
+        
+
+        
+        <script src="../elasticlunr.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../mark.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../searcher.js" type="text/javascript" charset="utf-8"></script>
+        
+
+        <script src="../clipboard.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../highlight.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../book.js" type="text/javascript" charset="utf-8"></script>
+
+        <!-- Custom JS scripts -->
+        
+
+        
+
+    </body>
+</html>
