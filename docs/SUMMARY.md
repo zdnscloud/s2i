@@ -11,4 +11,4 @@
   - [php](./builders/php.md)
   - [nodejs](./builders/nodejs.md)
   - [java](./builders/java.md)
-  - [go]('./builders/go.md)
+  - [go](./builders/go.md)
