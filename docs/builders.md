@@ -1,6 +1,6 @@
 # Builders
 
-- php7
+- php
 - nodejs
 - java
 - go
