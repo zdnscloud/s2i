@@ -11,19 +11,19 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta name="theme-color" content="#ffffff" />
 
-        <link rel="shortcut icon" href="../../favicon.png">
-        <link rel="stylesheet" href="../../css/variables.css">
-        <link rel="stylesheet" href="../../css/general.css">
-        <link rel="stylesheet" href="../../css/chrome.css">
-        <link rel="stylesheet" href="../../css/print.css" media="print">
+        <link rel="shortcut icon" href="../favicon.png">
+        <link rel="stylesheet" href="../css/variables.css">
+        <link rel="stylesheet" href="../css/general.css">
+        <link rel="stylesheet" href="../css/chrome.css">
+        <link rel="stylesheet" href="../css/print.css" media="print">
 
         <!-- Fonts -->
-        <link rel="stylesheet" href="../../FontAwesome/css/font-awesome.css">
+        <link rel="stylesheet" href="../FontAwesome/css/font-awesome.css">
 
         <!-- Highlight.js Stylesheets -->
-        <link rel="stylesheet" href="../../highlight.css">
-        <link rel="stylesheet" href="../../tomorrow-night.css">
-        <link rel="stylesheet" href="../../ayu-highlight.css">
+        <link rel="stylesheet" href="../highlight.css">
+        <link rel="stylesheet" href="../tomorrow-night.css">
+        <link rel="stylesheet" href="../ayu-highlight.css">
 
         <!-- Custom theme stylesheets -->
         
@@ -33,7 +33,7 @@
     <body class="light">
         <!-- Provide site root to javascript -->
         <script type="text/javascript">
-            var path_to_root = "../../";
+            var path_to_root = "../";
             var default_theme = "light";
         </script>
 
@@ -76,11 +76,11 @@
 
         <nav id="sidebar" class="sidebar" aria-label="Table of contents">
             <div class="sidebar-brand">
-              <image class="sidebar-icon" src="../../images/icon.png" />
+              <image class="sidebar-icon" src="../images/icon.png" />
               <b class="sidebar-book-title">Zcloud Source to Image</b>
             </div>
             <div class="sidebar-scrollbox">
-                <ol class="chapter"><li><a href="../../s2i.html"><strong aria-hidden="true">1.</strong> S2I Intro</a></li><li><ol class="section"><li><a href="../../s2i/builder_image.html"><strong aria-hidden="true">1.1.</strong> Builder Requirements</a></li><li><a href="../../s2i/cli.html"><strong aria-hidden="true">1.2.</strong> CLI</a></li><li><a href="../../s2i/debugging-s2i.html"><strong aria-hidden="true">1.3.</strong> Debugging</a></li><li><a href="../../s2i/new_labels.html"><strong aria-hidden="true">1.4.</strong> New Lables</a></li><li><a href="../../s2i/runtime_image.html"><strong aria-hidden="true">1.5.</strong> Runtime Image</a></li><li><a href="../../s2i/user_guide.html"><strong aria-hidden="true">1.6.</strong> User Guide</a></li></ol></li><li><a href="../../builders.html"><strong aria-hidden="true">2.</strong> Builders</a></li><li><ol class="section"><li><a href="../../builders/php.html"><strong aria-hidden="true">2.1.</strong> php</a></li><li><a href="../../builders/nodejs.html"><strong aria-hidden="true">2.2.</strong> nodejs</a></li><li><a href="../../builders/java.html"><strong aria-hidden="true">2.3.</strong> java</a></li><li><a href="../../'./builders/go.html" class="active"><strong aria-hidden="true">2.4.</strong> go</a></li></ol></li></ol>
+                <ol class="chapter"><li><a href="../s2i.html"><strong aria-hidden="true">1.</strong> S2I Intro</a></li><li><ol class="section"><li><a href="../s2i/builder_image.html"><strong aria-hidden="true">1.1.</strong> Builder Requirements</a></li><li><a href="../s2i/cli.html"><strong aria-hidden="true">1.2.</strong> CLI</a></li><li><a href="../s2i/debugging-s2i.html"><strong aria-hidden="true">1.3.</strong> Debugging</a></li><li><a href="../s2i/new_labels.html"><strong aria-hidden="true">1.4.</strong> New Lables</a></li><li><a href="../s2i/runtime_image.html"><strong aria-hidden="true">1.5.</strong> Runtime Image</a></li><li><a href="../s2i/user_guide.html"><strong aria-hidden="true">1.6.</strong> User Guide</a></li></ol></li><li><a href="../builders.html"><strong aria-hidden="true">2.</strong> Builders</a></li><li><ol class="section"><li><a href="../builders/php.html"><strong aria-hidden="true">2.1.</strong> php</a></li><li><a href="../builders/nodejs.html"><strong aria-hidden="true">2.2.</strong> nodejs</a></li><li><a href="../builders/java.html"><strong aria-hidden="true">2.3.</strong> java</a></li><li><a href="../builders/go.html" class="active"><strong aria-hidden="true">2.4.</strong> go</a></li></ol></li></ol>
             </div>
             <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
         </nav>
@@ -137,7 +137,7 @@
                     <nav class="nav-wrapper" aria-label="Page navigation">
                         <!-- Mobile navigation buttons -->
                         
-                            <a rel="prev" href="../../builders/java.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                            <a rel="prev" href="../builders/java.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
                                 <i class="fa fa-angle-left"></i>
                             </a>
                         
@@ -151,7 +151,7 @@
 
             <nav class="nav-wide-wrapper" aria-label="Page navigation">
                 
-                    <a href="../../builders/java.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                    <a href="../builders/java.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
                         <i class="fa fa-angle-left"></i>
                     </a>
                 
@@ -164,7 +164,7 @@
         
         <!-- Livereload script (if served using the cli tool) -->
         <script type="text/javascript">
-            var socket = new WebSocket("ws://localhost:8089");
+            var socket = new WebSocket("ws://localhost:8849");
             socket.onmessage = function (event) {
                 if (event.data === "reload") {
                     socket.close();
@@ -183,14 +183,14 @@
         
 
         
-        <script src="../../elasticlunr.min.js" type="text/javascript" charset="utf-8"></script>
-        <script src="../../mark.min.js" type="text/javascript" charset="utf-8"></script>
-        <script src="../../searcher.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../elasticlunr.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../mark.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../searcher.js" type="text/javascript" charset="utf-8"></script>
         
 
-        <script src="../../clipboard.min.js" type="text/javascript" charset="utf-8"></script>
-        <script src="../../highlight.js" type="text/javascript" charset="utf-8"></script>
-        <script src="../../book.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../clipboard.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../highlight.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../book.js" type="text/javascript" charset="utf-8"></script>
 
         <!-- Custom JS scripts -->
         
