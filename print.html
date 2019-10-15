@@ -786,6 +786,27 @@ docker run -p 8080:3000 --rm sui
 <h3><a class="header" href="#使用builder镜像-2" id="使用builder镜像-2">使用<code>builder</code>镜像</a></h3>
 <pre><code>s2i build [source dir] zdnscloud/s2i-php-builder [app image name]
 </code></pre>
+<h4><a class="header" href="#构建过程-2" id="构建过程-2">构建过程</a></h4>
+<p>支持的环境变量配置</p>
+<ul>
+<li>MVN_GOALS</li>
+<li>MVN_SKIP_TESTS</li>
+<li>MVN_OPTS</li>
+</ul>
+<p>调用maven，执行：</p>
+<pre><code class="language-shell">mvn ${MVN_GOALS:-clean package} -DskipTests=${MVN_SKIP_TESTS:-true} \
+  -Dmaven.skip.tests=${MVN_SKIP_TESTS:-true} ${MVN_OPTS}
+
+</code></pre>
+<p>根据<code>pom.xml</code>构建 <code>jar</code> 包，只支持构建单个 <code>jar</code> 包，将 <code>jar</code> 包拷贝到 <code>/opt/app-root/app.jar</code></p>
+<h4><a class="header" href="#运行-2" id="运行-2">运行</a></h4>
+<p>支持的环境变量配置</p>
+<ul>
+<li>JAVA_PARAMS</li>
+</ul>
+<p>执行：</p>
+<pre><code class="language-shell">exec java $JAVA_PARAMS -jar /opt/app-root/app.jar
+</code></pre>
 <h1><a class="header" href="#go" id="go">go</a></h1>
 
                     </main>
