@@ -248,7 +248,7 @@ order to provide additional details that can help diagnose issues.</p>
         
         <!-- Livereload script (if served using the cli tool) -->
         <script type="text/javascript">
-            var socket = new WebSocket("ws://localhost:8849");
+            var socket = new WebSocket("ws://localhost:8089");
             socket.onmessage = function (event) {
                 if (event.data === "reload") {
                     socket.close();

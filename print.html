@@ -774,6 +774,18 @@ exec /usr/libexec/s2i/run
 docker run -p 8080:3000 --rm sui
 </code></pre>
 <h1><a class="header" href="#java" id="java">java</a></h1>
+<h2><a class="header" href="#maven" id="maven">maven</a></h2>
+<p>目录 <code>builders/maven-java</code>
+基于 <code>openshift/base-centos7</code></p>
+<h3><a class="header" href="#构建builder镜像-2" id="构建builder镜像-2">构建<code>builder</code>镜像</a></h3>
+<pre><code>make build
+</code></pre>
+<h3><a class="header" href="#发布builder镜像-2" id="发布builder镜像-2">发布<code>builder</code>镜像</a></h3>
+<pre><code>make docker
+</code></pre>
+<h3><a class="header" href="#使用builder镜像-2" id="使用builder镜像-2">使用<code>builder</code>镜像</a></h3>
+<pre><code>s2i build [source dir] zdnscloud/s2i-php-builder [app image name]
+</code></pre>
 <h1><a class="header" href="#go" id="go">go</a></h1>
 
                     </main>
@@ -800,7 +812,7 @@ docker run -p 8080:3000 --rm sui
         
         <!-- Livereload script (if served using the cli tool) -->
         <script type="text/javascript">
-            var socket = new WebSocket("ws://localhost:8849");
+            var socket = new WebSocket("ws://localhost:8089");
             socket.onmessage = function (event) {
                 if (event.data === "reload") {
                     socket.close();
